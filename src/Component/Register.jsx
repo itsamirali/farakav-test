@@ -1,5 +1,6 @@
 import React from "react";
-import InputAndLabel from "./CusotmComponents/InputAndLabel";
+import InputAndLabel from "./CusotmComponents/InputAndLabel/InputAndLabel";
+import JalaliDatePicker from "./CusotmComponents/JalaliDatePicker/JalaliDatePicker";
 import styles from "./Register.module.css";
 
 const Register = () => {
@@ -19,6 +20,7 @@ const Register = () => {
           type="email"
           placeholder="مثلا: test@test.com"
         />
+        <JalaliDatePicker />
         <InputAndLabel
           label="شماره همراه"
           inputId="phoneNumber"
