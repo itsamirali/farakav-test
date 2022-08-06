@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="appMainContainer">
       <div className="videoContainer">
+        <div className="videoContainerOuter"></div>
         <ReactHlsPlayer
           src={videoSrc}
           width="100%"

@@ -1,0 +1,27 @@
+.formContainer {
+  width: 500px;
+  min-height: 600px;
+  background-color: rgba(240, 255, 255, 0.59);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  /* border: 1px solid rgb(1, 62, 60); */
+  box-shadow: 2px 4px 10px rgb(1, 62, 60);
+  padding: 10px;
+}
+.formTitle {
+  font-family: "Lalezar", cursive;
+  font-size: 34px;
+  color: rgb(16, 62, 62);
+}
+.formStyles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
