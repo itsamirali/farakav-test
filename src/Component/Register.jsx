@@ -11,6 +11,7 @@ const Register = () => {
   const [phoneNum, setPhonNum] = useState({ error: false, myValue: "" });
   const [date, setDate] = useState(undefined);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [isRegisteringDone, setIsRegisteringDone] = useState(false);
 
   const validateEmail = (email) => {
     return String(email)
@@ -52,60 +53,76 @@ const Register = () => {
   }, [fullName?.myValue, email?.myValue, phoneNum?.myValue]);
 
   return (
-    <div className={styles.formContainer}>
-      {isRegistered && (
-        <Modal
-          title="تایتل"
-          message="ثبت نام شما با موفقیت تکمیل شد!"
-          setShow={setIsRegistered}
-        />
+    <>
+      {!isRegisteringDone && (
+        <>
+          <div className={styles.formContainer}>
+            {isRegistered && (
+              <Modal
+                title="تایتل"
+                message="! ثبت نام شما با موفقیت انجام شد"
+                setShow={setIsRegistered}
+                onSubmit={setIsRegisteringDone}
+              />
+            )}
+            <>
+              <h2 className={styles.formTitle}>ثبت نام در مسابقه</h2>
+              <form className={styles.formStyles} onSubmit={submitHandler}>
+                <InputAndLabel
+                  label="نام و نام خانوادگی"
+                  inputId="fullName"
+                  type="text"
+                  placeholder="مثلا: محسن احمدی"
+                  setValue={setFullNmae}
+                  value={fullName}
+                />
+                <InputAndLabel
+                  label="ایمیل"
+                  inputId="email"
+                  type="email"
+                  placeholder="مثلا: test@test.com"
+                  setValue={setEmail}
+                  value={email}
+                />
+                <MyDatePicker
+                  setDate={setDate}
+                  date={date}
+                  label="تاریخ تولد"
+                />
+                <InputAndLabel
+                  label="شماره همراه"
+                  inputId="phoneNumber"
+                  type="number"
+                  placeholder="مثلا: ۰۹۱۲۱۲۳۴۵۶۷"
+                  setValue={setPhonNum}
+                  value={phoneNum}
+                />
+                <div className={styles.submitContainer}>
+                  {!fullName?.myValue?.length < 1 &&
+                  !email?.myValue?.length < 1 &&
+                  !phoneNum?.myValue?.length < 1 ? (
+                    <input
+                      className={styles.submitBtnStyle}
+                      type="submit"
+                      value="ثبت نام"
+                    />
+                  ) : (
+                    <span
+                      className={cx(
+                        styles.submitBtnStyle,
+                        styles.disableBtnStyles
+                      )}
+                    >
+                      ثبت نام
+                    </span>
+                  )}
+                </div>
+              </form>
+            </>
+          </div>
+        </>
       )}
-      <h2 className={styles.formTitle}>ثبت نام در مسابقه</h2>
-      <form className={styles.formStyles} onSubmit={submitHandler}>
-        <InputAndLabel
-          label="نام و نام خانوادگی"
-          inputId="fullName"
-          type="text"
-          placeholder="مثلا: محسن احمدی"
-          setValue={setFullNmae}
-          value={fullName}
-        />
-        <InputAndLabel
-          label="ایمیل"
-          inputId="email"
-          type="email"
-          placeholder="مثلا: test@test.com"
-          setValue={setEmail}
-          value={email}
-        />
-        <MyDatePicker setDate={setDate} date={date} label="تاریخ تولد" />
-        <InputAndLabel
-          label="شماره همراه"
-          inputId="phoneNumber"
-          type="number"
-          placeholder="مثلا: ۰۹۱۲۱۲۳۴۵۶۷"
-          setValue={setPhonNum}
-          value={phoneNum}
-        />
-        <div className={styles.submitContainer}>
-          {!fullName?.myValue?.length < 1 &&
-          !email?.myValue?.length < 1 &&
-          !phoneNum?.myValue?.length < 1 ? (
-            <input
-              className={styles.submitBtnStyle}
-              type="submit"
-              value="ثبت نام"
-            />
-          ) : (
-            <span
-              className={cx(styles.submitBtnStyle, styles.disableBtnStyles)}
-            >
-              ثبت نام
-            </span>
-          )}
-        </div>
-      </form>
-    </div>
+    </>
   );
 };
 
