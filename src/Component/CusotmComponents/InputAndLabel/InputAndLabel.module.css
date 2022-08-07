@@ -32,3 +32,18 @@
   border: 1px solid rgba(0, 130, 130, 0.668);
   outline: 4px solid rgba(0, 130, 130, 0.191);
 }
+.errStyles {
+  border: 1px solid rgba(130, 0, 0, 0.668) !important;
+  outline: 4px solid rgba(130, 0, 0, 0.191) !important;
+
+}
+
+.labelStyles {
+  font-family: "Vazirmatn", sans-serif;
+  color: rgb(16, 62, 62);
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
+  font-size: 14px;
+  text-align: end;
+}

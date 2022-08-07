@@ -12,9 +12,8 @@ const MyDatePicker = ({ setDate, date = moment(), label }) => {
         setDate(date);
       }}
       label={label}
-      
+      timePicker={false}
     />
-    // <input type="datetime-local" onChange={(e) => setExDate(e.target.value)} value={value} className={cx(styles.datePicker, "px-3")} />
   );
 };
 
