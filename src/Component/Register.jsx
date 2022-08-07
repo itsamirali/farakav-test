@@ -1,13 +1,17 @@
-import React from "react";
+import { useState } from "react";
+import MyDatePicker from "./CusotmComponents/DatePicker/MyDatePicker";
 import InputAndLabel from "./CusotmComponents/InputAndLabel/InputAndLabel";
-import JalaliDatePicker from "./CusotmComponents/JalaliDatePicker/JalaliDatePicker";
 import styles from "./Register.module.css";
 
 const Register = () => {
+  const [date, setDate] = useState(undefined);
+  const submitHandler = (e) => {
+    e.preventDefault()
+  }
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.formTitle}>ثبت نام در مسابقه</h2>
-      <form className={styles.formStyles}>
+      <form className={styles.formStyles} onSubmit={submitHandler}>
         <InputAndLabel
           label="نام و نام خانوادگی"
           inputId="fullName"
@@ -20,13 +24,20 @@ const Register = () => {
           type="email"
           placeholder="مثلا: test@test.com"
         />
-        <JalaliDatePicker />
+        <MyDatePicker
+          setDate={setDate}
+          date={date}
+          label="تاریخ تولد"
+        />
         <InputAndLabel
           label="شماره همراه"
           inputId="phoneNumber"
           type="text"
           placeholder="مثلا: ۰۹۱۲۱۲۳۴۵۶۷"
         />
+        <div className={styles.submitContainer}>
+        <input className={styles.submitBtnStyle} type="submit" value="ثبت نام" />
+        </div>
       </form>
     </div>
   );

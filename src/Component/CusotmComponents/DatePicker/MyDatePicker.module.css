@@ -1,0 +1,29 @@
+.datePicker {
+  padding: 0 5px !important;
+}
+.datePicker {
+  font-family: "Vazirmatn", sans-serif;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  direction: rtl;
+  transition: all 0.3s ease-out;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  text-align: end !important;
+  color: rgba(0, 0, 0, 0.526) !important;
+}
+.datePicker::placeholder {
+  font-family: "Vazirmatn", sans-serif;
+}
+.datePicker:focus {
+  box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, -5px, 0);
+  border: 1px solid rgba(0, 130, 130, 0.668);
+  outline: 4px solid rgba(0, 130, 130, 0.191);
+}
