@@ -38,12 +38,11 @@
 
 }
 
-.labelStyles {
-  font-family: "Vazirmatn", sans-serif;
-  color: rgb(16, 62, 62);
-  width: 100%;
-  box-sizing: border-box;
-  padding-right: 10px;
-  font-size: 14px;
-  text-align: end;
+@media (max-width: 550px) {
+  .labelStyles{
+    margin-bottom: 5px;
+  }
+  .inputStyles {
+    margin-bottom: 7px;
+  }
 }

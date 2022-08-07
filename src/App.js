@@ -10,8 +10,6 @@ function App() {
         <div className="videoContainerOuter"></div>
         <ReactHlsPlayer
           src={videoSrc}
-          width="100%"
-          height="auto"
           autoPlay={true}
           muted
           controls={false}

@@ -27,3 +27,39 @@
 .sc-kpOJdX.nYegl {
   width: 100%;
 }
+.sc-kpOJdX.nYegl label {
+  font-family: "Vazirmatn", sans-serif;
+  color: rgb(16, 62, 62);
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
+  font-size: 14px;
+  text-align: end;
+}
+video {
+  height: 100%;
+  width: 177.77777778vh; /* 100 * 16 / 9 */
+  min-width: 100%;
+  min-height: 56.25vw;
+}
+
+@media (max-width: 1000px) {
+  video {
+    transform: translateX(-15vh);
+  }
+}
+@media (max-width: 870px) {
+  video {
+    transform: translateX(-30vh);
+  }
+}
+@media (max-width: 770px) {
+  video {
+    transform: translateX(-40vh);
+  }
+}
+@media (max-width: 550px) {
+  .sc-kpOJdX.nYegl label{
+    margin-bottom: 5px;
+  }
+}
