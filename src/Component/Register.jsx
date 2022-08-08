@@ -102,12 +102,14 @@ const Register = () => {
                   !email?.myValue?.length < 1 &&
                   !phoneNum?.myValue?.length < 1 ? (
                     <input
+                      data-testid="buttonTestId"
                       className={styles.submitBtnStyle}
                       type="submit"
                       value="ثبت نام"
                     />
                   ) : (
                     <span
+                      data-testid="buttonTestId"
                       className={cx(
                         styles.submitBtnStyle,
                         styles.disableBtnStyles
